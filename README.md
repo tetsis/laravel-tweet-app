@@ -7,5 +7,6 @@
 # コミットする前に
 `.env` に変更がある場合は以下のコマンドを実行し、 `.env.encrypted` を更新してください。
 ```
+rm .env.encrypted
 php artisan env:encrypt --key=（暗号化キー）
 ```
