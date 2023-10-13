@@ -171,3 +171,8 @@ php artisan config:cache
 ## ブラウザでページの表示を確認
 - http://（サーバのIPアドレス）/tweet
 - http://（サーバのIPアドレス）/email
+
+# 参考
+- [Laravel 10.x デプロイ | ReaDouble](https://readouble.com/laravel/10.x/ja/deployment.html)
+- [Deployment | Laravel](https://laravel.com/docs/10.x/deployment)
+- [Download Composer](https://getcomposer.org/download/)
