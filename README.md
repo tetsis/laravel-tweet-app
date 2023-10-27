@@ -27,7 +27,52 @@ Ubuntu Server 22.04 LTS
 sudo apt update
 ```
 
+## Apache
+- リバースプロキシにApacheを使うときにのみ実行する
+- Nginxを使う場合はこの項目の手順は不要
+
+### インストール
+```
+sudo apt install apache2
+```
+
+### 設定
+```
+sudo vim /etc/apache2/sites-available/000-default.conf
+```
+
+- ファイルの中身を以下のようにする
+```
+<VirtualHost *:80>
+
+        ...
+
+        DocumentRoot /var/www/laravel-tweet-app/public
+
+        ...
+
+        <Directory "/var/www/laravel-tweet-app/public">
+                RewriteEngine On
+                AllowOverride All
+                Allow from All
+        </Directory>
+</VirtualHost>
+```
+
+### mod_rewriteを有効にする
+```
+sudo a2enmod rewrite
+```
+
+### 再起動
+```
+sudo systemctl restart apache2
+```
+
 ## Nginx
+- リバースプロキシにNginxを使うときにのみ実行する
+- Apacheを使う場合はこの項目の手順は不要
+
 ### インストール
 ```
 sudo apt install nginx
@@ -166,6 +211,17 @@ sudo chown -R www-data:www-data /var/www/laravel-tweet-app/
 ## 設定キャッシュ
 ```
 php artisan config:cache
+```
+
+## （念のため）リバースプロキシを再起動
+- Apacheの場合
+```
+sudo systemctl restart apache2
+```
+
+- Nginxの場合
+```
+sudo systemctl restart nginx
 ```
 
 ## ブラウザでページの表示を確認
