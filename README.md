@@ -232,3 +232,5 @@ sudo systemctl restart nginx
 - [Laravel 10.x デプロイ | ReaDouble](https://readouble.com/laravel/10.x/ja/deployment.html)
 - [Deployment | Laravel](https://laravel.com/docs/10.x/deployment)
 - [Download Composer](https://getcomposer.org/download/)
+- [プロフェッショナルWebプログラミング　Laravel](https://books.mdn.co.jp/books/3221303041/)
+    - サンプルアプリの中身については本書のCHAPTER2で作成するつぶやきアプリを利用しています。
