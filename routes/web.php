@@ -30,3 +30,5 @@ Route::delete('/tweet/delete/{tweetId}', \App\Http\Controllers\Tweet\DeleteContr
 
 Route::get('/email', \App\Http\Controllers\Email\IndexController::class)->name('email.index');
 Route::post('/email/send', \App\Http\Controllers\Email\SendController::class)->name('email.send');
+
+Route::get('/perl', \App\Http\Controllers\ExecPerlController::class)->name('perl.index');
